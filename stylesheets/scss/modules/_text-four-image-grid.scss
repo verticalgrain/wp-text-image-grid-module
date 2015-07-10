@@ -1,0 +1,88 @@
+.textimagegrid {
+	padding-top: 80px;
+	padding-bottom: 60px;
+	width: 100%;
+
+	&__content {
+		padding-right: 60px;
+		.align-right & {
+			float: right;
+			padding-right: 0;
+			padding-left: 60px;
+			@media(max-width: $breakpoint-medium) {
+				padding: 0 gutter() 20px gutter();
+			}
+		}
+		@media(max-width: $breakpoint-medium) {
+			padding: 0 gutter() 20px gutter();
+		}
+	}
+
+	&__title {
+		font-size: 30px;
+		margin-bottom: 15px;
+		font-weight: $font-weight-light;
+	}
+
+	&__subtitle {
+		font-size: 18px;
+		line-height: 150%;
+		margin-bottom: 18px;
+	}
+
+	&__text {
+
+	}
+
+	&__imagegrid {
+		@media (max-width: $breakpoint-medium) {
+			padding: 0;
+		}
+	}
+
+	&__item {
+		line-height: 0;
+		@include span(1 of 2);
+		padding-left: 5px;
+		padding-bottom: 10px;
+		padding-right: 5px;
+		@media(max-width: $breakpoint-medium) {
+			padding-left: gutter();
+		}
+	}
+
+	&__iteminner {
+		position:relative;
+		overflow: hidden;
+		&:hover {
+			.textimagegrid__imagecaption {
+				bottom: 0;
+			}
+		}
+	}
+
+	&__image {
+		width: 100%;
+		height: auto;
+	}
+
+	&__imagecaption {
+		position: absolute;
+		bottom: -100%;
+		left: 0;
+		width: 100%;
+		display: block;
+		padding: 15px 60px 15px 60px;
+		text-align: center;
+		color: white;
+		font-size: 18px;
+		line-height: 115%;
+		background: rgba(0,0,0,0.5);
+		@include transition-duration(0.3s);
+		@media (max-width: $breakpoint-small) {
+			height: 100%;
+			font-size: 12px;
+			bottom: 0;
+		}
+	}
+}
